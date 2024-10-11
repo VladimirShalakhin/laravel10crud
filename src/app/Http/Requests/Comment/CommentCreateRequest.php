@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Company;
+namespace App\Http\Requests\Comment;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CompanyCreateRequest extends FormRequest
+class CommentCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +22,10 @@ class CompanyCreateRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|min:3|max:39|alpha',
-            'description' => 'required|min:150|max:400|string',
-            'logo' => 'mimes:png|max:3000',
+            'user_id' => 'required|integer|exists:users,id',
+            'company_id' => 'required|integer|exists:companies,id',
+            'body' => 'required|min:150|max:550|string',
+            'rating' => 'required|integer|between:1,10',
         ];
     }
 }
