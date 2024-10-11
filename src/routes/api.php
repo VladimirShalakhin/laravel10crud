@@ -33,3 +33,5 @@ Route::resource('comments', CommentController::class)->only([
     'destroy',
 ]);
 Route::get('/companies/best', [CompanyController::class, 'getBest']);
+Route::get('/companies/{company}/rating', [CompanyController::class, 'getRating']);
+Route::get('/companies/{company}/comments', [CompanyController::class, 'getComments']);
