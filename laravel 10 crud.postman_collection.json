@@ -1,0 +1,293 @@
+{
+	"info": {
+		"_postman_id": "0485f789-5c93-44b0-9133-2cc9c0945bf5",
+		"name": "laravel 10 crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "35045715"
+	},
+	"item": [
+		{
+			"name": "localhost:3008/api/users/6",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/home/vladimir/Downloads/600-kb.jpg",
+							"disabled": true
+						},
+						{
+							"key": "first_name",
+							"value": "new name",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3008/api/users/6",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"users",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "testg",
+							"type": "text"
+						},
+						{
+							"key": "surname",
+							"value": "gbgfbfgbfgb",
+							"type": "text"
+						},
+						{
+							"key": "phone_number",
+							"value": "+79119119191",
+							"type": "text"
+						},
+						{
+							"key": "avatar",
+							"type": "file",
+							"src": "/home/vladimir/Downloads/600-kb.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3008/api/users",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/users/5",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3008/api/users/5",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"users",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/companies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "testname",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "fdv",
+							"type": "text"
+						},
+						{
+							"key": "logo",
+							"type": "file",
+							"src": "/home/vladimir/Downloads/dummy-500-kb-example-png-file.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3008/api/companies",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/companies/1",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:3008/api/companies/1",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"companies",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/comments",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "user_id",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "company_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "body",
+							"value": "fdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfvfdvdfv\n",
+							"type": "text"
+						},
+						{
+							"key": "rating",
+							"value": "2",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:3008/api/comments",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/companies/best",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3008/api/companies/best",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"companies",
+						"best"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/companies/:company/rating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3008/api/companies/:company/rating",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"companies",
+						":company",
+						"rating"
+					],
+					"variable": [
+						{
+							"key": "company",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:3008/api/companies/:company/comments?page=2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:3008/api/companies/:company/comments?page=2",
+					"host": [
+						"localhost"
+					],
+					"port": "3008",
+					"path": [
+						"api",
+						"companies",
+						":company",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					],
+					"variable": [
+						{
+							"key": "company",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
