@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Company;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class UserPostRequest extends FormRequest
+class CompanyCreateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +22,9 @@ class UserPostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'first_name' => 'required|min:3|max:39|alpha',
-            'surname' => 'required|min:3|max:39|alpha',
-            'phone_number' => 'unique:users,phone_number|required|regex:/^\+7\d{10}$/',
-            'avatar' => 'mimes:png,jpg|max:2000',
+            'name' => 'required|min:3|max:39|alpha',
+            'description' => 'required|min:1|max:400|alpha',
+            'logo' => 'mimes:png|max:3000',
         ];
     }
 }

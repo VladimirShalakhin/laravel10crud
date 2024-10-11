@@ -26,9 +26,7 @@ services:
       - ./src:/app # Если нужно монтировать исходники в контейнер (напр для разработки)
     depends_on:
       - db
-      - redis
     restart: unless-stopped
-
 
   # PgSQL контейнер
   db:
@@ -40,19 +38,3 @@ services:
       POSTGRES_DB: api
       POSTGRES_USER: root
       POSTGRES_PASSWORD: password
-    volumes:
-      - dbdata:/var/lib/postgresql # Используем именованный том из блока volumes
-
-  redis:
-    image: 'bitnami/redis'
-    ports:
-      - "6379:6379"
-    environment:
-      - REDIS_PASSWORD=password
-
-  # Тома
-volumes:
-  # Чтобы данные БД не пропадали после выключения создаем именованный том
-  dbdata:
-    external: true
-    name: pgsql
