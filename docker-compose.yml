@@ -13,8 +13,6 @@ services:
         - APP_DIR=/app
         # Путь к папке с исходниками в контейнере для NGINX (Полезно для Laravel, etc. т.к там необходимо указывать путь до директории public)
         - NGINX_PHP_PATH=/app
-    # Если нужно из compose собирать в образ
-    # image: registry.gitlab.kuznetsovvp.ru/vshalakhin/test:latest
     environment:
      - NGINX_PHP_PATH=/app/public # Так же этот параметр можно настроить в environment или env_file (compose)
     ports:
