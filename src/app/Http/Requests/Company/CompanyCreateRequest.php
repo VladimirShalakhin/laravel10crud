@@ -4,6 +4,9 @@ namespace App\Http\Requests\Company;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+ * @property file $logo
+ */
 class CompanyCreateRequest extends FormRequest
 {
     /**
