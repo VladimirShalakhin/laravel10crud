@@ -8,6 +8,7 @@ setup: ## setup project
 	make configuration
 	docker compose exec main sh -c "php artisan key:generate"
 	sleep 5 && make migrate
+	make swagger
 
 migrate: ## migrate & seed
 	docker compose exec main sh -c "php artisan migrate:fresh"
@@ -28,5 +29,5 @@ down: ## docker compose down
 ps: ## docker compose ps
 	docker compose ps
 
-test:
+swagger:
 	docker run -p 85:8080 -d --rm   -e URL=/openapi.yaml -v /home/vladimir/Documents/laravel10crud/openapi.yaml:/usr/share/nginx/html/openapi.yaml swaggerapi/swagger-ui
